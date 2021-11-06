@@ -3,13 +3,31 @@
 
 <section>
   <h1>Artists</h1>
+  <% if (user) { %> 
+    <h2>Add New Artist</h2>
+    <form action="/artists" method="POST">
+      <label>
+        Name:
+        <input type="text" name="name">
+      </label>
+      <label>
+        Age:
+        <input type="text" name="age">
+      </label> 
+      <label>
+        Handedness:
+        <input type="text" name="handedness">
+      </label> 
+      <label>
+        <button type="submit">Add Artist</button>
+      </label> 
+    </form>
   <ul>
     <% artists.forEach(artist => { %> 
       <div>
         <li>Name:<%= artist.name %></li>
         <li>Age:<%= artist.age %></li>
         <li>handedness:<%= artist.handedness %></li>
-
         <li>Name:<%= artist.name %></li>
       </div>
       <% }) %> 

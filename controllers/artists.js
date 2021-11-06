@@ -10,6 +10,11 @@ function index (req, res) {
   })
 }
 
+function create (req, res) {
+  console.log("Works")
+}
+
 export {
-  index
+  index,
+  create
 }
