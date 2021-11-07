@@ -23,7 +23,12 @@ function create (req, res) {
   })
 }
 
+function show (req, res) {
+  console.log("Show me the art")
+}
+
 export {
   index,
-  create
+  create,
+  show
 }

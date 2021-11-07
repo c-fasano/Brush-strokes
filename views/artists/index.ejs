@@ -26,10 +26,15 @@
   <ul>
     <% artists.forEach(artist => { %> 
       <div>
+        <li>Picture: <%= artist.picture %> </li>
         <li>Name:<%= artist.name %></li>
         <li>Age:<%= artist.age %></li>
         <li>handedness:<%= artist.handedness %></li>
-        <li>Name:<%= artist.name %></li>
+        <li>Name:<%= artist.artwork %></li>
+        <li>
+          <a href="/artists/<%= artist._id %>">View All Artwork</a>
+        </li>
+        <!-- this will need an anchor tag with a link to /artwork-->
       </div>
       <% }) %> 
   </ul>

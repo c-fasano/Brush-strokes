@@ -11,6 +11,7 @@ const artworkSchema = new Schema ({
 })
 
 const artistSchema = new Schema ({
+  picture: String,
   name: String,
   age: Number,
   handedness: String,
