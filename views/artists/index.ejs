@@ -7,11 +7,12 @@
     <h2>Add New Artist</h2>
     <form action="/artists" method="POST">
       <label>
+        Picture of Artist:
         <input 
-        type="file" 
-        id="artist-picture" 
+        type="img"
+        alt="Artist Picture"
         name="picture"
-        accept="image/png, image/jpeg">
+        src="<% artists.picture %>">
       </label>
       <label>
         Name:

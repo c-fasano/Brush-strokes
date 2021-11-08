@@ -7,7 +7,7 @@
 
 <% if (user) { %> 
   <h2>Add Artwork</h2>
-  <form>
+  <form action="/artists/:id/artwork" method="POST">
     <label>
       <input
       type="file"

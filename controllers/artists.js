@@ -33,8 +33,13 @@ function show (req, res) {
   })
 }
 
+function addArtwork (req, res) {
+  console.log("Adding artwork")
+}
+
 export {
   index,
   create,
-  show
+  show,
+  addArtwork
 }
