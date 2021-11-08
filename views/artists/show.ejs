@@ -9,11 +9,11 @@
   <h2>Add Artwork</h2>
   <form action="/artists/:id/artwork" method="POST">
     <label>
+      Add Artwork:
       <input
-      type="file"
-      id="artwork-picture"
-      name="picture"
-      accept="image/*">
+        type="img"
+        alt="Picture of Artwork"
+        src="<% artist.artwork.picture %>">
     </label>
     <label>
       Title:

@@ -25,7 +25,7 @@ function create (req, res) {
 
 function show (req, res) {
   Artist.findById(req.params.id)
-  .then( artist => {
+  .then(artist => {
     res.render("artists/show", {
       artist,
       title: "Artist Home Page"
@@ -35,6 +35,13 @@ function show (req, res) {
 
 function addArtwork (req, res) {
   console.log("Adding artwork")
+  console.log(req.body)
+  //need to push artwork to artist.artwork 
+
+  // Artist.findById(req.params.id) 
+  //   .then(artist => {
+  //     artist.artwork.push(req.body)
+  //   })
 }
 
 export {

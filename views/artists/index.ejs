@@ -9,10 +9,8 @@
       <label>
         Picture of Artist:
         <input 
-        type="img"
-        alt="Artist Picture"
-        name="picture"
-        src="<% artists.picture %>">
+        type="text"
+        name="picture">
       </label>
       <label>
         Name:
@@ -35,10 +33,10 @@
     <% artists.forEach(artist => { %> 
       <div>
         <li>Picture: <%= artist.picture %> </li>
+        <img src="<%= artist.picture %>">
         <li>Name:<%= artist.name %></li>
         <li>Age:<%= artist.age %></li>
         <li>handedness:<%= artist.handedness %></li>
-        <li>Name:<%= artist.artwork %></li>
         <li>
           <a href="/artists/<%= artist._id %>">View All Artwork</a>
         </li>
