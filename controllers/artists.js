@@ -24,7 +24,13 @@ function create (req, res) {
 }
 
 function show (req, res) {
-  console.log("Show me the art")
+  Artist.findById(req.params.id)
+  .then( artist => {
+    res.render("artists/show", {
+      artist,
+      title: "Artist Home Page"
+    })
+  })
 }
 
 export {
