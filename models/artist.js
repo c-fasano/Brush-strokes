@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const artworkSchema = new Schema ({ 
+  picture: String,
   titleOfPiece: String,
   size: Number,
   medium: String,

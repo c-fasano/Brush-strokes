@@ -1,8 +1,49 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+
+
 <h1><%= artist.name %></h1>
 
+<% if (user) { %> 
+  <h2>Add Artwork</h2>
+  <form>
+    <label>
+      <input
+      type="file"
+      id="artwork-picture"
+      name="picture"
+      accept="image/*">
+    </label>
+    <label>
+      Title:
+      <input 
+      type="text"
+      name="titleOfPiece">
+    </label>
+    <label>
+      Size:
+      <input
+      type="text"
+      name="size">
+    </label>
+    <label>
+      Medium:
+      <input
+      type="text"
+      name="medium">
+    </label>
+    <label>
+      Surface:
+      <input
+      type="text"
+      name="surface">
+    </label>
+    <label>
+      <button type="submit">Add Artwork</button>
+    </label>
+  </form>
+  <% } %> 
 
 
 
