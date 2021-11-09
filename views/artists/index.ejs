@@ -1,6 +1,8 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<link rel="stylesheet" href="stylesheets/artists/index.css">
+
 <section>
   <h1>Artists</h1>
   <% if (user) { %> 
@@ -10,7 +12,8 @@
         Picture of Artist:
         <input 
         type="text"
-        name="picture">
+        name="picture"
+        placeholder="Insert Link">
       </label>
       <label>
         Name:
@@ -32,12 +35,13 @@
   <ul>
     <% artists.forEach(artist => { %> 
       <div>
-        <li>Picture: <%= artist.picture %> </li>
-        <img src="<%= artist.picture %>"
-        style="max-width: 250px; width: 100%">
-        <li>Name:<%= artist.name %></li>
-        <li>Age:<%= artist.age %></li>
-        <li>handedness:<%= artist.handedness %></li>
+        <li>
+          <img src="<%= artist.picture %>"
+          style="max-width: 250px; width: 100%">
+        </li>
+        <li>Name: <%= artist.name %></li>
+        <li>Age: <%= artist.age %></li>
+        <li>handedness: <%= artist.handedness %></li>
         <li>
           <a href="/artists/<%= artist._id %>">View All Artwork</a>
         </li>
