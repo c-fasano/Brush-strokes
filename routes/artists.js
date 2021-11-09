@@ -17,7 +17,6 @@ router.post("/", isLoggedIn, artistsCtrl.create)
 
 //:3000/artists/:id/artwork
 router.post("/:id/artwork", isLoggedIn, artistsCtrl.addArtwork)
-//is this route correct?
 
 export {
   router
