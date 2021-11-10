@@ -22,6 +22,7 @@ router.post("/", isLoggedIn, artistsCtrl.create)
 //:3000/artists/:id/artwork
 router.post("/:id/artwork", isLoggedIn, artistsCtrl.addArtwork)
 
+router.post("/:id/artwork/:id/comments", isLoggedIn, artistsCtrl.writeComment)
 
 export {
   router

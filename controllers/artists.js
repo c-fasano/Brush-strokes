@@ -12,7 +12,6 @@ function index (req, res) {
 
 function create (req, res) {
   console.log("Works")
-  // req.body.owner = req.user.profile._id
   Artist.create (req.body)
   .then(artist => {
     res.redirect("/artists")
@@ -56,10 +55,15 @@ function details (req, res) {
   })
 }
 
+function writeComment (req, res) {
+  console.log("Writing Comment")
+}
+
 export {
   index,
   create,
   show,
   addArtwork,
-  details
+  details,
+  writeComment
 }
