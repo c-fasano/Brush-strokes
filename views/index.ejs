@@ -1,6 +1,8 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+<link rel="stylesheet" href="stylesheets/index.css">k
+
 <main>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>

@@ -7,13 +7,12 @@
 
 <% if (user) { %> 
   <h2>Add Artwork</h2>
-  <form action="/artists/:id/artwork" method="POST">
+  <form action="/artists/<%= artist._id %>/artwork" method="POST">
     <label>
       Add Artwork:
       <input
-        type="img"
-        alt="Picture of Artwork"
-        src="<% artist.artwork.picture %>">
+        type="text"
+        name="picture">
     </label>
     <label>
       Title:
@@ -25,7 +24,8 @@
       Size:
       <input
       type="text"
-      name="size">
+      name="size"
+      placeholder="Length x Width">
     </label>
     <label>
       Medium:

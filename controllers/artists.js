@@ -36,14 +36,14 @@ function show (req, res) {
 function addArtwork (req, res) {
   console.log("Adding artwork")
   console.log(req.body)
-  // Artist.findById(req.params.id) 
-  // .then(artist => {
-  //   artist.artwork.push(req.body)
-  //   res.redirect("/artist/:id")
-  // })
-  // .catch (error => {
-  //   res.redirect("/artist/:id") //template literal so artists id is read as the actual id instead of the string ":id"
-  // })
+  Artist.findById(req.params.id)
+  .then(artist => {
+    artist.artwork.push(req.body)
+    artist.save()
+    .then(()=> {
+      res.redirect(`/artists/${artist._id}`)
+    })
+  })
 }
 
 

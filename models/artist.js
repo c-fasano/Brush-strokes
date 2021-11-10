@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const artworkSchema = new Schema ({ 
   picture: String,
   titleOfPiece: String,
-  size: Number,
+  size: String,
   medium: String,
   Surface: String,
   //comments: [{type: Schema.Types.ObjectId, ref: "Comment"}]
