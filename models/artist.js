@@ -25,6 +25,7 @@ const artistSchema = new Schema ({
   age: Number,
   handedness: String,
   artwork: [artworkSchema],
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
 })
 
 const Artist = mongoose.model("Artist", artistSchema)

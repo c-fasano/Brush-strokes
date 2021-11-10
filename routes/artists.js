@@ -14,7 +14,7 @@ router.get("/", artistsCtrl.index)
 router.get("/:id", artistsCtrl.show)
 
 //:3000/artists/:id/artwork/:id
-router.get("/:id/artwork/:id", artistsCtrl.details)
+router.get("/:id/:artworkId", artistsCtrl.details)
 
 //3000/artists
 router.post("/", isLoggedIn, artistsCtrl.create)
@@ -22,7 +22,8 @@ router.post("/", isLoggedIn, artistsCtrl.create)
 //:3000/artists/:id/artwork
 router.post("/:id/artwork", isLoggedIn, artistsCtrl.addArtwork)
 
-router.post("/:id/artwork/:id/comments", isLoggedIn, artistsCtrl.writeComment)
+
+router.post("/:id/artwork/:artworkId/comments", isLoggedIn, artistsCtrl.writeComment)
 
 export {
   router

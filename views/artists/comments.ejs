@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
   <h1>Comments PAGE</h1>
-</body>
-</html>
+  <ul>
+    <% artist.artwork.forEach(artComment => { %> 
+      <div>
+        <li>
+          <a href="/artists/<%= artist._id %>/<%= artist.artwork._artworkId %>">
+            <img src="<%= artComment.picture %>"
+            style="max-width: 250px; width: 100%">
+          </a>
+        </li>
+        <li>Title: <%= artComment.titleOfPiece %></li>
+        <li>Size: <%= artComment.size %></li>
+        <li>Medium: <%= artComment.medium %></li>
+        <li>Surface: <%= artComment.surface %></li>
+        <form action="/artists/<%= artist._id %>/artwork/<%= artist.artwork._artworkId %>/comments">
+          <input 
+          type="textarea" 
+          name="content">
+          <button type="submit">Add Comment</button>
+        </form>
+      </div>
+      <% }) %> 
+  </ul>
+</main>
+
+<%- include('../partials/footer') %>
+
+
+
+
+<!--
+
+--

@@ -48,15 +48,20 @@ function addArtwork (req, res) {
 function details (req, res) {
   console.log("We've arrived to the comment place")
   Artist.findById(req.params.id)
-  .then(artwork => {
+  .then(artist => {
+    console.log(artist)
     res.render("artists/comments", {
-      artwork
+      artist,
+      title: "Details"
     })
   })
 }
 
 function writeComment (req, res) {
-  console.log("Writing Comment")
+  Artist.findById(req.params.id)
+  .then(artist => {
+    console.log(artist)
+  })
 }
 
 export {

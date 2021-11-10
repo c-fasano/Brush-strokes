@@ -13,7 +13,7 @@
         name="picture"
         placeholder="Insert Link">
     </label>
-    <!--<label>
+    <label>
       Title:
       <input 
       type="text"
@@ -37,7 +37,7 @@
       <input
       type="text"
       name="surface">
-    </label>-->
+    </label>
     <label>
       <button type="submit">Add Artwork</button>
     </label>
@@ -52,16 +52,16 @@
           
         </li>
         <li>
-          <a href="/artists/<%= artist._id %>/artwork/<%= art._id %>">
+          <a href="/artists/<%= artist._id %>/<%= art._id %>">
             <img src="<%= art.picture %>"
             style="max-width: 250px; width: 100%">
           </a>
         </li>
-        <!--<li>Title: <%= art.titleOfPiece %></li>
+        <li>Title: <%= art.titleOfPiece %></li>
         <li>Size: <%= art.size %></li>
         <li>Medium: <%= art.medium %></li>
         <li>Surface: <%= art.surface %></li>
-      </div> -->
+      </div> 
       <% }) %> 
   </ul>
 
