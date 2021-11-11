@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="stylesheets/artists/index.css">
 
-<section>
+<main>
   <h1>Artists</h1>
   <% if (user) { %> 
     <h2>Add New Artist</h2>
@@ -32,24 +32,26 @@
       </label> 
     </form>
     <% } %> 
-  <ul>
-    <% artists.forEach(artist => { %> 
-      <div>
-        <li>
-          <img src="<%= artist.picture %>"
-          style="max-width: 250px; width: 100%">
-        </li>
-        <li>Name: <%= artist.name %></li>
-        <li>Age: <%= artist.age %></li>
-        <li>handedness: <%= artist.handedness %></li>
-        <li>
-          <a href="/artists/<%= artist._id %>">View All Artwork</a>
-        </li>
-        <!-- this will need an anchor tag with a link to /artwork-->
-      </div>
-      <% }) %> 
-  </ul>
-</section>
+  <section>
+    <ul id="picture-artist">
+      <% artists.forEach(artist => { %> 
+        <div>
+          <li>
+            <img src="<%= artist.picture %>"
+            style="max-width: 250px; width: 100%">
+          </li>
+          <li>Name: <%= artist.name %></li>
+          <li>Age: <%= artist.age %></li>
+          <li>handedness: <%= artist.handedness %></li>
+          <li>
+            <a href="/artists/<%= artist._id %>">View All Artwork</a>
+          </li>
+          <!-- this will need an anchor tag with a link to /artwork-->
+        </div>
+        <% }) %> 
+    </ul>
+  </section>
+</main>
 
 
 

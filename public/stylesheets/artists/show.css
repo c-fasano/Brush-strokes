@@ -1,0 +1,18 @@
+main {
+  display: flex;
+}
+
+#artwork-pictures {
+  display: flex;
+  list-style: none;
+}
+
+div {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+#portrait {
+  height: 300px;
+  width: 300px;
+}

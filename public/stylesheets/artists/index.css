@@ -6,3 +6,16 @@ h1 {
 div {
   list-style: none;
 }
+
+section {
+  display: flex;
+}
+
+#picture-artist {
+  display: flex;
+}
+
+div {
+  margin-right: 25px;
+  margin-left: 25px;
+}

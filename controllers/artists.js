@@ -69,17 +69,41 @@ function writeComment (req, res) {
       return piece._id
     })
     obj.comments.push(req.body)
-    console.log(obj)
+    // console.log(obj)
     artist.save()
     .then(()=> {
     res.render("artists/comments", {
       artist,
       title: "Details"
-    })
-    // res.redirect(`artists/${artist._id}/artwork`)
+      })
     })
   })
 }
+
+function deleteComment (req, res) {
+  const artistId = req.params.id
+  const artworkId = req.params.artworkId
+  Artist.findById(artistId)
+  .then(artist => {
+    let artArray = artist.artwork
+    let obj = artArray.find(piece => {
+      piece._id == artworkId
+      // console.log(piece._id)
+      return piece._id
+    })
+    obj.comments.remove(req.body)
+    console.log(req.body.id)
+    console.log(obj)
+    artist.save()
+    .then(() => {
+      res.render("artists/comments", {
+        artist,
+        title: "Details"
+      })
+    })
+  })  
+}
+
 
 export {
   index,
@@ -87,5 +111,6 @@ export {
   show,
   addArtwork,
   details,
-  writeComment
+  writeComment,
+  deleteComment as delete
 }
