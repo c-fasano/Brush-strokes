@@ -2,12 +2,11 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Comments PAGE</h1>
+  <h1>Comments Page</h1>
   <ul>
     <% artist.artwork.forEach(artComment => { %> 
       <div>
         <li>
-          <a href="/artists/<%= artist._id %>/<%= artist.artwork._artworkId %>">
             <img src="<%= artComment.picture %>"
             style="max-width: 250px; width: 100%">
           </a>
@@ -16,22 +15,23 @@
         <li>Size: <%= artComment.size %></li>
         <li>Medium: <%= artComment.medium %></li>
         <li>Surface: <%= artComment.surface %></li>
-        <form action="/artists/<%= artist._id %>/artwork/<%= artist.artwork._artworkId %>/comments">
+        <form action="/artists/<%= artist._id %>/artwork/<%= artComment._id %>/comments" method="POST">
           <input 
           type="textarea" 
           name="content">
           <button type="submit">Add Comment</button>
         </form>
+        <div>
+          <ul>
+            <% artComment.comments.forEach(commentObj => { %> 
+              <li> <%= commentObj.content %> </li>
+            <% }) %> 
+          </ul>
+        </div>
       </div>
       <% }) %> 
-  </ul>
-</main>
+    </ul>
 
-<%- include('../partials/footer') %>
-
-
-
-
-<!--
-
---
+  </main>
+  
+  <%- include('../partials/footer') %>

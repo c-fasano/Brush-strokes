@@ -48,20 +48,12 @@
     <% artist.artwork.forEach(art => { %> 
       <div>
         <li>
-          
-          
-        </li>
-        <li>
-          <a href="/artists/<%= artist._id %>/<%= art._id %>">
+          <a href="/artists/<%= artist._id %>/artwork/<%= art._id %>">
             <img src="<%= art.picture %>"
             style="max-width: 250px; width: 100%">
           </a>
         </li>
-        <li>Title: <%= art.titleOfPiece %></li>
-        <li>Size: <%= art.size %></li>
-        <li>Medium: <%= art.medium %></li>
-        <li>Surface: <%= art.surface %></li>
-      </div> 
+      </div>
       <% }) %> 
   </ul>
 

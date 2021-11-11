@@ -46,7 +46,7 @@ function addArtwork (req, res) {
 }
 
 function details (req, res) {
-  console.log("We've arrived to the comment place")
+  // console.log("We've arrived to the comment place")
   Artist.findById(req.params.id)
   .then(artist => {
     console.log(artist)
@@ -58,9 +58,26 @@ function details (req, res) {
 }
 
 function writeComment (req, res) {
-  Artist.findById(req.params.id)
+  const artistId = req.params.id
+  const artworkId = req.params.artworkId
+  Artist.findById(artistId)
   .then(artist => {
-    console.log(artist)
+    let artArray = artist.artwork
+    let obj = artArray.find(piece => {
+      piece._id == artworkId
+      // console.log(piece._id)
+      return piece._id
+    })
+    obj.comments.push(req.body)
+    console.log(obj)
+    artist.save()
+    .then(()=> {
+    res.render("artists/comments", {
+      artist,
+      title: "Details"
+    })
+    // res.redirect(`artists/${artist._id}/artwork`)
+    })
   })
 }
 
