@@ -6,18 +6,17 @@
 <main>
   <h1>Comments Page</h1>
   <ul  id="pictures">
-    <% artist.artwork.forEach(artComment => { %> 
       <div>
         <li>
-            <img src="<%= artComment.picture %>"
+            <img src="<%= artwork.picture %>"
             style="max-width: 250px; width: 100%">
           </a>
         </li>
-        <li>Title: <%= artComment.titleOfPiece %></li>
-        <li>Size: <%= artComment.size %></li>
-        <li>Medium: <%= artComment.medium %></li>
-        <li>Surface: <%= artComment.surface %></li>
-        <form action="/artists/<%= artist._id %>/artwork/<%= artComment._id %>/comments" method="POST">
+        <li>Title: <%= artwork.titleOfPiece %></li>
+        <li>Size: <%= artwork.size %></li>
+        <li>Medium: <%= artwork.medium %></li>
+        <li>Surface: <%= artwork.surface %></li>
+        <form action="/artists/<%= artist._id %>/artwork/<%= artwork._id %>/comments" method="POST">
           <input 
           type="textarea" 
           name="content">
@@ -25,14 +24,15 @@
         </form>
         <div>
           <ul>
-            <% artComment.comments.forEach(commentObj => { %> 
+            <% artwork.comments.forEach(commentObj => { %> 
               <li> <%= commentObj.content %> </li>
+            <form action="/artists/<%= artist._id %>/artwork/<%= artwork._id %>/comments/<%= commentObj._id %>?_method=DELETE" method="POST">
               <button type="submit">Remove</button>
+            </form>
             <% }) %> 
           </ul>
         </div>
       </div>
-      <% }) %> 
     </ul>
 
 </main>

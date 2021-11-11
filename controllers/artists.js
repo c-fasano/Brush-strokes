@@ -5,7 +5,7 @@ function index (req, res) {
   .then(artists => {
     res.render("artists/index", {
       artists,
-      title: "Isn't this great!"
+      title: "Artists"
     })
   })
 }
@@ -47,12 +47,18 @@ function addArtwork (req, res) {
 
 function details (req, res) {
   // console.log("We've arrived to the comment place")
+  console.log(req.params)
   Artist.findById(req.params.id)
   .then(artist => {
-    console.log(artist)
+    console.log(artist.artwork)
+    const artwork = artist.artwork.find(function(work) {
+      return work._id.equals(req.params.artworkId)
+    })
+    console.log("Artwork", artwork)
     res.render("artists/comments", {
       artist,
-      title: "Details"
+      title: "Details",
+      artwork
     })
   })
 }
@@ -91,15 +97,17 @@ function deleteComment (req, res) {
       // console.log(piece._id)
       return piece._id
     })
-    obj.comments.remove(req.body)
+    obj.comments.remove(req.params.commentId)
     console.log(req.body.id)
     console.log(obj)
     artist.save()
     .then(() => {
-      res.render("artists/comments", {
-        artist,
-        title: "Details"
-      })
+      res.redirect(`/artists/${artistId}/artwork/${artworkId}`)
+      // res.render("artists/comments", {
+      //   artist,
+      //   title: "Details",
+      //   artwork
+      // })
     })
   })  
 }
