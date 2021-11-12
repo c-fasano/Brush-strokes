@@ -9,19 +9,20 @@
       <input 
       type="text"
       name="picture"
-      placeholder="Insert Link">
+      placeholder="Insert Link"
+      value="<%= artist.picture %> ">
     </label>
     <label>
       Name:
-      <input type="text" name="name">
+      <input type="text" name="name" value="<%= artist.name %> ">
     </label>
     <label>
       Age:
-      <input type="text" name="age">
+      <input type="text" name="age" value="<%= artist.age %> ">
     </label> 
     <label>
       Handedness:
-      <input type="text" name="handedness">
+      <input type="text" name="handedness" value="<%= artist.handedness %> ">
     </label> 
     <label>
       <button type="submit">Add Artist</button>

@@ -123,7 +123,13 @@ function deleteComment (req, res) {
 }
 
 function update (req, res) {
-
+  Artist.findByIdAndUpdate(req.params.id)
+  .then(artist => {
+    artist.updateOne(req.body)
+    .then(()=> {
+      res.redirect("/artists")
+    })
+  })
 }
 
 export {

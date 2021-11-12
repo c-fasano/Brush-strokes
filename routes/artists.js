@@ -28,6 +28,8 @@ router.post("/:id/artwork", isLoggedIn, artistsCtrl.addArtwork)
 router.post("/:id/artwork/:artworkId/comments", isLoggedIn, artistsCtrl.writeComment)
 
 
+router.put("/:id", isLoggedIn, artistsCtrl.update)
+
 router.delete("/:id/artwork/:artworkId/comments/:commentId", isLoggedIn, artistsCtrl.delete)
 
 
