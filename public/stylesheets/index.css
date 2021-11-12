@@ -21,3 +21,13 @@ h2 {
   font-weight: bolder;
   margin-top: 25px;
 }
+
+button {
+  border: 6px solid rgb(222, 249, 202);
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px black;
+  background-color: rgb(193, 195, 254);
+  font-size: 2rem;
+  color: black;
+  font-weight: bolder;
+}
