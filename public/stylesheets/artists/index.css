@@ -3,12 +3,27 @@ body {
 }
 
 h1 {
-  color: rgb(2, 30, 55);
+  color: rgb(193, 195, 254);
   text-align: center;
+  font-size: 6rem;
+}
+
+h2 {
+  color:rgb(252, 193, 140);
+  font-size: 3rem;
 }
 
 div {
   list-style: none;
+  margin-right: 25px;
+  margin-left: 25px;
+  color: rgb(193, 195, 254);
+  font-size: 2rem;
+}
+
+.art {
+  color:rgb(252, 193, 140);
+  text-decoration: none;
 }
 
 section {
@@ -19,7 +34,22 @@ section {
   display: flex;
 }
 
-div {
-  margin-right: 25px;
-  margin-left: 25px;
+form {
+  color:rgb(222, 249, 202);
+  font-size: 1.75rem;
+  margin-bottom: 25px;
+}
+
+label {
+  margin-left: 15px;
+}
+
+button {
+  border: 6px solid rgb(222, 249, 202);
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px black;
+  background-color: rgb(193, 195, 254);
+  font-size: 2rem;
+  color: black;
+  font-weight: bolder;
 }

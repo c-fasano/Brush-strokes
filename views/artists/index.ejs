@@ -6,7 +6,7 @@
 <main>
   <h1>Artists</h1>
   <% if (user) { %> 
-    <h2>Add New Artist</h2>
+    <h2>Add New Artist:</h2>
     <form action="/artists" method="POST">
       <label>
         Picture of Artist:
@@ -44,10 +44,10 @@
           <li>Age: <%= artist.age %></li>
           <li>handedness: <%= artist.handedness %></li>
           <li>
-            <a href="/artists/<%= artist._id %>">View All Artwork</a>
+            <a class="art" href="/artists/<%= artist._id %>">View All Artwork -></a>
           </li>
           <li>
-            <a href="/artists/<%= artist._id %>/edit">Edit Artist</a>
+            <a class="art" href="/artists/<%= artist._id %>/edit">Edit Artist -></a>
           </li>
         </div>
         <% }) %> 
