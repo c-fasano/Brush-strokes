@@ -25,8 +25,6 @@ router.put("/:id", isLoggedIn, artistsCtrl.update)
 
 router.delete("/:id/artwork/:artworkId/comments/:commentId", isLoggedIn, artistsCtrl.delete)
 
-
-
 export {
   router
 }
