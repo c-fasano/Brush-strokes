@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="stylesheets/index.css">
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>Drawn To It</h1>
+  <h2>A community to share the love for artists and artwork alike</h2>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -13,6 +14,7 @@
       >
     </div>
   <% } %>
+  <a class="intro" href="/artists">Click here to get started</a>
 </main>
 
 <%- include('./partials/footer') %> 

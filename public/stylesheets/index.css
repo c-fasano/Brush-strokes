@@ -1,3 +1,23 @@
 body {
   background-image: url("https://i.imgur.com/imHuwAP.png?1");
 }
+
+h1 {
+  color: rgb(193, 195, 254);
+  text-align: center;
+  font-size: 6rem;
+}
+
+h2 {
+  color:rgb(252, 193, 140);
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.intro {
+  font-size: 2rem;
+  color: rgb(222, 249, 202);
+  text-decoration: none;
+  font-weight: bolder;
+  margin-top: 25px;
+}
