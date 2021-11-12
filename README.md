@@ -17,6 +17,10 @@ As an admirer of all things creative and as a creator myself, I set out with a g
 5. Mongoose
 6. Google oAuth
 
+### Attributions
+1. https://freefrontend.com/css-background-patterns/
+
+
 ### Future Implementations
 
 1. Give users the ability to create their own artist page that is connected to their profile
