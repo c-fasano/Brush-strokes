@@ -51,3 +51,13 @@ div {
 body {
   background-image: url("https://i.imgur.com/imHuwAP.png?1")
 }
+
+input {
+  border: 3px solid black;
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px black;
+  background-color: rgb(193, 195, 254);
+  font-size: 2rem;
+  color: black;
+  font-weight: bolder;
+}
