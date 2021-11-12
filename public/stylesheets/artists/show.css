@@ -2,6 +2,37 @@ main {
   display: flex;
 }
 
+h1 {
+  color: rgb(193, 195, 254);
+  text-align: center;
+  font-size: 6rem;
+}
+
+h2 {
+  color:rgb(252, 193, 140);
+  font-size: 3rem;
+}
+
+form {
+  color:rgb(222, 249, 202);
+  font-size: 1.75rem;
+  margin-bottom: 25px;
+}
+
+button {
+  border: 6px solid rgb(222, 249, 202);
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px black;
+  background-color: rgb(193, 195, 254);
+  font-size: 2rem;
+  color: black;
+  font-weight: bolder;
+}
+
+label {
+  margin-left: 15px;
+}
+
 #artwork-pictures {
   display: flex;
   list-style: none;
