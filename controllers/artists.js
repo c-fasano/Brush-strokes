@@ -60,7 +60,7 @@ function details (req, res) {
   console.log(req.params)
   Artist.findById(req.params.id)
   .then(artist => {
-    console.log(artist.artwork)
+    // console.log(artist.artwork)
     const artwork = artist.artwork.find(function(work) {
       return work._id.equals(req.params.artworkId)
     })
@@ -88,10 +88,7 @@ function writeComment (req, res) {
     // console.log(obj)
     artist.save()
     .then(()=> {
-    res.render("artists/comments", {
-      artist,
-      title: "Details"
-      })
+      res.redirect(`/artists/${artistId}/artwork/${artworkId}`)
     })
   })
 }
