@@ -56,11 +56,9 @@ function addArtwork (req, res) {
 }
 
 function details (req, res) {
-  // console.log("We've arrived to the comment place")
   console.log(req.params)
   Artist.findById(req.params.id)
   .then(artist => {
-    // console.log(artist.artwork)
     const artwork = artist.artwork.find(function(work) {
       return work._id.equals(req.params.artworkId)
     })
@@ -81,11 +79,9 @@ function writeComment (req, res) {
     let artArray = artist.artwork
     let obj = artArray.find(piece => {
       piece._id == artworkId
-      // console.log(piece._id)
       return piece._id
     })
     obj.comments.push(req.body)
-    // console.log(obj)
     artist.save()
     .then(()=> {
       res.redirect(`/artists/${artistId}/artwork/${artworkId}`)
@@ -101,7 +97,6 @@ function deleteComment (req, res) {
     let artArray = artist.artwork
     let obj = artArray.find(piece => {
       piece._id == artworkId
-      // console.log(piece._id)
       return piece._id
     })
     obj.comments.remove(req.params.commentId)
@@ -110,11 +105,6 @@ function deleteComment (req, res) {
     artist.save()
     .then(() => {
       res.redirect(`/artists/${artistId}/artwork/${artworkId}`)
-      // res.render("artists/comments", {
-      //   artist,
-      //   title: "Details",
-      //   artwork
-      // })
     })
   })  
 }
