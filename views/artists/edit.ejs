@@ -1,0 +1,32 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit Artist</h1>
+  <form action="/artists/<%= artist._id %>?_method=PUT" method="POST">
+    <label>
+      Picture of Artist:
+      <input 
+      type="text"
+      name="picture"
+      placeholder="Insert Link">
+    </label>
+    <label>
+      Name:
+      <input type="text" name="name">
+    </label>
+    <label>
+      Age:
+      <input type="text" name="age">
+    </label> 
+    <label>
+      Handedness:
+      <input type="text" name="handedness">
+    </label> 
+    <label>
+      <button type="submit">Add Artist</button>
+    </label> 
+</form>
+</section>
+
+<%- include('../partials/footer') %>

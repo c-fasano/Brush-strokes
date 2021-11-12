@@ -22,6 +22,16 @@ function create (req, res) {
   })
 }
 
+function edit (req, res) {
+  Artist.findById(req.params.id)
+  .then(artist => {
+    res.render("artists/edit", {
+      title: "Edit an Artist",
+      artist
+    })
+  })
+}
+
 function show (req, res) {
   Artist.findById(req.params.id)
   .then(artist => {
@@ -112,6 +122,9 @@ function deleteComment (req, res) {
   })  
 }
 
+function update (req, res) {
+
+}
 
 export {
   index,
@@ -120,5 +133,7 @@ export {
   addArtwork,
   details,
   writeComment,
-  deleteComment as delete
+  deleteComment as delete,
+  edit,
+  update
 }
